@@ -3,6 +3,7 @@ import ReactDom from "react-dom/client";
 import Greeting from "./Greeting.jsx";
 import Product from "./Product.js";
 import UserCard from "./UserCard.jsx";
+import Button from "./Button.jsx";
 
 const rootElement = document.getElementById("root");
 
@@ -10,7 +11,11 @@ const root = ReactDom.createRoot(rootElement);
 
 root.render(
   <>
-    <Greeting title="Hola mundo" name="Jesus" />
+    <Button text="Click Me" />
+    <Button text="Pay" />
+    <Button text="Go To" />
+
+    {/* <Greeting title="Hola mundo" name="Jesus" />
     <Greeting title="Hola React" name="JOSE" />
     <Greeting title="Hola JSX" />
     <Greeting title="Hola Sarai" />
@@ -33,6 +38,6 @@ root.render(
       married={false}
       points={[100, 20]}
       address={{ street: "123 av some", city: "New York" }}
-    />
+    /> */}
   </>
 );
