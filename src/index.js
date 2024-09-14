@@ -4,6 +4,7 @@ import Greeting from "./Greeting.jsx";
 import Product from "./Product.js";
 import UserCard from "./UserCard.jsx";
 import Button from "./Button.jsx";
+import TaskCard from "./Task.jsx";
 
 const rootElement = document.getElementById("root");
 
@@ -11,9 +12,10 @@ const root = ReactDom.createRoot(rootElement);
 
 root.render(
   <>
-    <Button text="Click Me" />
+    <TaskCard ready={false} />
+    {/* <Button text="Click Me" />
     <Button text="Pay" />
-    <Button text="Go To" />
+    <Button text="Go To" /> */}
 
     {/* <Greeting title="Hola mundo" name="Jesus" />
     <Greeting title="Hola React" name="JOSE" />
