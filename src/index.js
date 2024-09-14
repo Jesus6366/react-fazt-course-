@@ -5,17 +5,38 @@ import Product from "./Product.js";
 import UserCard from "./UserCard.jsx";
 import Button from "./Button.jsx";
 import TaskCard from "./Task.jsx";
+import Saludar from "./Saludar.jsx";
 
 const rootElement = document.getElementById("root");
 
 const root = ReactDom.createRoot(rootElement);
 
+const HandleChange = (e) => {
+  console.log(e.target.value);
+};
+
 root.render(
   <>
+    <Saludar />
     <TaskCard ready={false} />
-    {/* <Button text="Click Me" />
+    <Button text="Click Me" />
     <Button text="Pay" />
-    <Button text="Go To" /> */}
+    <Button text="Go To" />
+
+    <input
+      onChange={HandleChange}
+      onDoubleClick={() => console.log("Double Click")}
+    />
+
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log("Sending data");
+      }}
+    >
+      <h1>Registro de evento</h1>
+      <button>Send</button>
+    </form>
 
     {/* <Greeting title="Hola mundo" name="Jesus" />
     <Greeting title="Hola React" name="JOSE" />
