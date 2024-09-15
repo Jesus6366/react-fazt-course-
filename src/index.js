@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDom from "react-dom/client";
 import Greeting from "./Greeting.jsx";
 import Product from "./Product.js";
@@ -12,33 +12,28 @@ const rootElement = document.getElementById("root");
 
 const root = ReactDom.createRoot(rootElement);
 
-const users = [
-  {
-    id: 1,
-    name: "Ryan Ray",
-    image: "https://robohash.org/user1",
-  },
-  {
-    id: 2,
-    name: "Joe",
-    image: "https://robohash.org/user2",
-  },
-  {
-    id: 3,
-    name: "Marcos",
-    image: "https://robohash.org/user3",
-  },
-];
+const Counter = () => {
+  const [message, setMessage] = useState();
+
+  const messageFunction = () => {
+    alert(message);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+      />
+      <button onClick={messageFunction}>Save</button>
+    </div>
+  );
+};
 
 root.render(
   <>
-    {users.map((user, index) => {
-      return (
-        <div key={user.id}>
-          <h1>{user.name}</h1>
-          <img src={user.image} />
-        </div>
-      );
-    })}
+    <Counter />
   </>
 );
