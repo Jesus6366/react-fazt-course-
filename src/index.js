@@ -12,12 +12,33 @@ const rootElement = document.getElementById("root");
 
 const root = ReactDom.createRoot(rootElement);
 
-const HandleChange = (e) => {
-  console.log(e.target.value);
-};
+const users = [
+  {
+    id: 1,
+    name: "Ryan Ray",
+    image: "https://robohash.org/user1",
+  },
+  {
+    id: 2,
+    name: "Joe",
+    image: "https://robohash.org/user2",
+  },
+  {
+    id: 3,
+    name: "Marcos",
+    image: "https://robohash.org/user3",
+  },
+];
 
 root.render(
   <>
-    <Posts />
+    {users.map((user, index) => {
+      return (
+        <div key={user.id}>
+          <h1>{user.name}</h1>
+          <img src={user.image} />
+        </div>
+      );
+    })}
   </>
 );
